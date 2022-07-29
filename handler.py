@@ -1,5 +1,4 @@
 import datetime
-from ipaddress import ip_address
 import logging
 import requests
 
