@@ -14,7 +14,7 @@ functions:
     handler: handler.run
     events:
       # Invoke Lambda function every minute
-      - schedule: rate(1 minute)
+      - schedule: rate(1 hour)
   cronHandler:
     handler: handler.run
     events:
