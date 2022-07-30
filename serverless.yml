@@ -21,11 +21,6 @@ provider:
     project: license_check
 
 functions:
-  cronHandler:
-    handler: handler.run
-    events:
-      - schedule: cron(5 9-4 * 7-9 ? 2022)
-
   licenseHandler:
     handler: handler.check_license
     events:
