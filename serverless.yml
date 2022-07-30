@@ -4,7 +4,14 @@ service: license-check-py
 
 frameworkVersion: '3'
 
-
+plugins:
+  - serverless-localstack
+  - serverless-python-requirements
+  
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+    
 provider:
   name: aws
   runtime: python3.8
