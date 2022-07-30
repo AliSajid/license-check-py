@@ -11,7 +11,7 @@ plugins:
 custom:
   pythonRequirements:
     dockerizePip: non-linux
-    
+
 provider:
   name: aws
   runtime: python3.8
@@ -24,3 +24,8 @@ functions:
     handler: handler.run
     events:
       - schedule: cron(5 9-4 * 8-9 ? 2022)
+      
+  licenseHandler:
+    handler: handler.check_license
+    events:
+      - schedule: cron(0/5 * * 7-9 ? 2022)
