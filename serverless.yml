@@ -5,7 +5,6 @@ service: license-check-py
 frameworkVersion: '3'
 
 plugins:
-  - serverless-localstack
   - serverless-python-requirements
   
 custom:
