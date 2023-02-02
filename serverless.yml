@@ -4,14 +4,24 @@ service: license-check-py
 
 frameworkVersion: '3'
 
+plugins:
+  - serverless-python-requirements
+  
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
 
 provider:
   name: aws
   runtime: python3.8
+  environment:
+    CNIC: ${param:CNIC}
+  tags:
+    name: license_check_py
+    project: license_check
 
 functions:
-  cronHandler:
-    handler: handler.run
+  licenseHandler:
+    handler: handler.check_license
     events:
-      # Invoke Lambda function every 2nd minute from Mon-Fri
-      - schedule: cron(0/2 * ? * MON-FRI *)
+      - schedule: cron(5 9-4 * 7-9 ? 2022)
